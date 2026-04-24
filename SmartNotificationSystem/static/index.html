@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Smart Notification System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <main class="app-shell">
+    <header class="hero card">
+      <p class="hero-kicker">Mobile-ready filtering platform</p>
+      <h1>Smart Notification System</h1>
+      <p class="hero-subtitle">Capture notifications, classify urgency, store records, and continuously improve the model with user feedback.</p>
+      <div class="chip-row" id="hero-stats">
+        <span class="chip">Total: <strong id="stat-total">0</strong></span>
+        <span class="chip">Critical: <strong id="stat-critical">0</strong></span>
+        <span class="chip">Feedback: <strong id="stat-feedback">0</strong></span>
+      </div>
+    </header>
+
+    <section class="grid">
+      <article class="card" aria-labelledby="ingest-title">
+        <h2 id="ingest-title">Ingest Notification</h2>
+        <form id="notification-form" class="stack">
+          <label>Sender
+            <input name="sender" placeholder="prof@example.com" required>
+          </label>
+          <label>Source
+            <input name="source" placeholder="Email / WhatsApp / SMS" required>
+          </label>
+          <label>Platform (optional)
+            <input name="platform" placeholder="Instagram">
+          </label>
+          <label>Subject (optional)
+            <input name="subject" placeholder="Exam Update">
+          </label>
+          <label>Content
+            <textarea name="content" rows="5" placeholder="Type notification text..." required></textarea>
+          </label>
+          <button type="submit" class="btn btn-primary">Process and Store</button>
+        </form>
+      </article>
+
+      <article class="card" aria-labelledby="mute-title">
+        <h2 id="mute-title">Muted Applications</h2>
+        <form id="mute-form" class="inline-form">
+          <input name="app_name" placeholder="Instagram" required>
+          <button type="submit" class="btn">Mute</button>
+        </form>
+        <div id="muted-apps" class="chip-wrap"></div>
+      </article>
+    </section>
+
+    <section class="card" aria-labelledby="critical-title">
+      <div class="section-head">
+        <h2 id="critical-title">Critical Feed</h2>
+        <button class="btn btn-ghost" id="refresh-btn" type="button">Refresh</button>
+      </div>
+      <div id="critical-list" class="notification-list"></div>
+    </section>
+
+    <section class="card" aria-labelledby="all-title">
+      <h2 id="all-title">Latest Notifications</h2>
+      <div id="all-list" class="notification-list"></div>
+    </section>
+
+    <section class="card" aria-labelledby="model-title">
+      <h2 id="model-title">Model Snapshot</h2>
+      <p class="hint">Top keywords are dynamically updated using your importance feedback.</p>
+      <div id="keyword-weights" class="chip-wrap"></div>
+    </section>
+
+    <p class="status" id="status-line" role="status" aria-live="polite"></p>
+  </main>
+
+  <template id="notification-template">
+    <article class="notif-item">
+      <div class="notif-top">
+        <p class="notif-source"></p>
+        <span class="badge"></span>
+      </div>
+      <p class="notif-content"></p>
+      <div class="meta-row">
+        <small class="notif-sender"></small>
+        <small class="notif-time"></small>
+      </div>
+      <div class="feedback-row">
+        <button class="btn btn-small important" type="button">Mark Important</button>
+        <button class="btn btn-small neutral" type="button">Mark Noise</button>
+      </div>
+    </article>
+  </template>
+
+  <script src="/static/app.js" defer></script>
+</body>
+</html>
