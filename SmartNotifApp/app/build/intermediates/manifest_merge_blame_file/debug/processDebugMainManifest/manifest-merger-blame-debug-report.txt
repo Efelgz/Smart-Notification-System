@@ -1,0 +1,172 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.smartnotif"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="26"
+9        android:targetSdkVersion="35" />
+10
+11    <!-- Needed to post notifications (Android 13+) -->
+12    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+12-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:5:5-77
+12-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:5:22-74
+13    <!-- Needed to read real notifications from other apps -->
+14    <uses-permission android:name="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" />
+14-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:7:5-9:57
+14-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:7:22-90
+15
+16    <permission
+16-->[androidx.core:core:1.13.1] C:\Users\nurde\.gradle\caches\8.9\transforms\5b3908e0405727c8ad0b1b061453a9c2\transformed\core-1.13.1\AndroidManifest.xml:22:5-24:47
+17        android:name="com.smartnotif.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+17-->[androidx.core:core:1.13.1] C:\Users\nurde\.gradle\caches\8.9\transforms\5b3908e0405727c8ad0b1b061453a9c2\transformed\core-1.13.1\AndroidManifest.xml:23:9-81
+18        android:protectionLevel="signature" />
+18-->[androidx.core:core:1.13.1] C:\Users\nurde\.gradle\caches\8.9\transforms\5b3908e0405727c8ad0b1b061453a9c2\transformed\core-1.13.1\AndroidManifest.xml:24:9-44
+19
+20    <uses-permission android:name="com.smartnotif.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+20-->[androidx.core:core:1.13.1] C:\Users\nurde\.gradle\caches\8.9\transforms\5b3908e0405727c8ad0b1b061453a9c2\transformed\core-1.13.1\AndroidManifest.xml:26:5-97
+20-->[androidx.core:core:1.13.1] C:\Users\nurde\.gradle\caches\8.9\transforms\5b3908e0405727c8ad0b1b061453a9c2\transformed\core-1.13.1\AndroidManifest.xml:26:22-94
+21
+22    <application
+22-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:11:5-40:19
+23        android:allowBackup="true"
+23-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:12:9-35
+24        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+24-->[androidx.core:core:1.13.1] C:\Users\nurde\.gradle\caches\8.9\transforms\5b3908e0405727c8ad0b1b061453a9c2\transformed\core-1.13.1\AndroidManifest.xml:28:18-86
+25        android:debuggable="true"
+26        android:extractNativeLibs="false"
+27        android:icon="@mipmap/ic_launcher"
+27-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:13:9-43
+28        android:label="@string/app_name"
+28-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:14:9-41
+29        android:roundIcon="@mipmap/ic_launcher_round"
+29-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:15:9-54
+30        android:supportsRtl="true"
+30-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:16:9-35
+31        android:testOnly="true"
+32        android:theme="@style/Theme.SmartNotifApp" >
+32-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:17:9-51
+33        <activity
+33-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:19:9-27:20
+34            android:name="com.smartnotif.MainActivity"
+34-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:20:13-41
+35            android:exported="true"
+35-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:21:13-36
+36            android:theme="@style/Theme.SmartNotifApp" >
+36-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:22:13-55
+37            <intent-filter>
+37-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:23:13-26:29
+38                <action android:name="android.intent.action.MAIN" />
+38-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:24:17-69
+38-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:24:25-66
+39
+40                <category android:name="android.intent.category.LAUNCHER" />
+40-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:25:17-77
+40-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:25:27-74
+41            </intent-filter>
+42        </activity>
+43
+44        <!-- Real NotificationListenerService — intercepts OS notifications -->
+45        <service
+45-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:30:9-38:19
+46            android:name="com.smartnotif.core.SmartNotificationListenerService"
+46-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:31:13-66
+47            android:exported="true"
+47-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:32:13-36
+48            android:label="Smart Notification Filter"
+48-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:33:13-54
+49            android:permission="android.permission.BIND_NOTIFICATION_LISTENER_SERVICE" >
+49-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:34:13-87
+50            <intent-filter>
+50-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:35:13-37:29
+51                <action android:name="android.service.notification.NotificationListenerService" />
+51-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:36:17-99
+51-->C:\Projects\SmartNotifApp\app\src\main\AndroidManifest.xml:36:25-96
+52            </intent-filter>
+53        </service>
+54
+55        <provider
+55-->[androidx.emoji2:emoji2:1.3.0] C:\Users\nurde\.gradle\caches\8.9\transforms\faf8ecf2bcff14232f5135c10bed85d2\transformed\emoji2-1.3.0\AndroidManifest.xml:24:9-32:20
+56            android:name="androidx.startup.InitializationProvider"
+56-->[androidx.emoji2:emoji2:1.3.0] C:\Users\nurde\.gradle\caches\8.9\transforms\faf8ecf2bcff14232f5135c10bed85d2\transformed\emoji2-1.3.0\AndroidManifest.xml:25:13-67
+57            android:authorities="com.smartnotif.androidx-startup"
+57-->[androidx.emoji2:emoji2:1.3.0] C:\Users\nurde\.gradle\caches\8.9\transforms\faf8ecf2bcff14232f5135c10bed85d2\transformed\emoji2-1.3.0\AndroidManifest.xml:26:13-68
+58            android:exported="false" >
+58-->[androidx.emoji2:emoji2:1.3.0] C:\Users\nurde\.gradle\caches\8.9\transforms\faf8ecf2bcff14232f5135c10bed85d2\transformed\emoji2-1.3.0\AndroidManifest.xml:27:13-37
+59            <meta-data
+59-->[androidx.emoji2:emoji2:1.3.0] C:\Users\nurde\.gradle\caches\8.9\transforms\faf8ecf2bcff14232f5135c10bed85d2\transformed\emoji2-1.3.0\AndroidManifest.xml:29:13-31:52
+60                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+60-->[androidx.emoji2:emoji2:1.3.0] C:\Users\nurde\.gradle\caches\8.9\transforms\faf8ecf2bcff14232f5135c10bed85d2\transformed\emoji2-1.3.0\AndroidManifest.xml:30:17-75
+61                android:value="androidx.startup" />
+61-->[androidx.emoji2:emoji2:1.3.0] C:\Users\nurde\.gradle\caches\8.9\transforms\faf8ecf2bcff14232f5135c10bed85d2\transformed\emoji2-1.3.0\AndroidManifest.xml:31:17-49
+62            <meta-data
+62-->[androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\nurde\.gradle\caches\8.9\transforms\9680d5cc18e71d36c9590a8505e0402c\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:29:13-31:52
+63                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+63-->[androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\nurde\.gradle\caches\8.9\transforms\9680d5cc18e71d36c9590a8505e0402c\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:30:17-78
+64                android:value="androidx.startup" />
+64-->[androidx.lifecycle:lifecycle-process:2.8.6] C:\Users\nurde\.gradle\caches\8.9\transforms\9680d5cc18e71d36c9590a8505e0402c\transformed\lifecycle-process-2.8.6\AndroidManifest.xml:31:17-49
+65            <meta-data
+65-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nurde\.gradle\caches\8.9\transforms\1cfb3b405d44a3ff48410d01e9276996\transformed\profileinstaller-1.3.1\AndroidManifest.xml:29:13-31:52
+66                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+66-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nurde\.gradle\caches\8.9\transforms\1cfb3b405d44a3ff48410d01e9276996\transformed\profileinstaller-1.3.1\AndroidManifest.xml:30:17-85
+67                android:value="androidx.startup" />
+67-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nurde\.gradle\caches\8.9\transforms\1cfb3b405d44a3ff48410d01e9276996\transformed\profileinstaller-1.3.1\AndroidManifest.xml:31:17-49
+68        </provider>
+69
+70        <activity
+70-->[androidx.compose.ui:ui-tooling-android:1.7.3] C:\Users\nurde\.gradle\caches\8.9\transforms\243e9e0835d42f4233271baa6e52a987\transformed\ui-tooling-release\AndroidManifest.xml:23:9-25:39
+71            android:name="androidx.compose.ui.tooling.PreviewActivity"
+71-->[androidx.compose.ui:ui-tooling-android:1.7.3] C:\Users\nurde\.gradle\caches\8.9\transforms\243e9e0835d42f4233271baa6e52a987\transformed\ui-tooling-release\AndroidManifest.xml:24:13-71
+72            android:exported="true" />
+72-->[androidx.compose.ui:ui-tooling-android:1.7.3] C:\Users\nurde\.gradle\caches\8.9\transforms\243e9e0835d42f4233271baa6e52a987\transformed\ui-tooling-release\AndroidManifest.xml:25:13-36
+73
+74        <service
+74-->[androidx.room:room-runtime:2.6.1] C:\Users\nurde\.gradle\caches\8.9\transforms\e61d672324e703e6d1978c1b29cb2747\transformed\room-runtime-2.6.1\AndroidManifest.xml:24:9-28:63
+75            android:name="androidx.room.MultiInstanceInvalidationService"
+75-->[androidx.room:room-runtime:2.6.1] C:\Users\nurde\.gradle\caches\8.9\transforms\e61d672324e703e6d1978c1b29cb2747\transformed\room-runtime-2.6.1\AndroidManifest.xml:25:13-74
+76            android:directBootAware="true"
+76-->[androidx.room:room-runtime:2.6.1] C:\Users\nurde\.gradle\caches\8.9\transforms\e61d672324e703e6d1978c1b29cb2747\transformed\room-runtime-2.6.1\AndroidManifest.xml:26:13-43
+77            android:exported="false" />
+77-->[androidx.room:room-runtime:2.6.1] C:\Users\nurde\.gradle\caches\8.9\transforms\e61d672324e703e6d1978c1b29cb2747\transformed\room-runtime-2.6.1\AndroidManifest.xml:27:13-37
+78
+79        <receiver
+79-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nurde\.gradle\caches\8.9\transforms\1cfb3b405d44a3ff48410d01e9276996\transformed\profileinstaller-1.3.1\AndroidManifest.xml:34:9-52:20
+80            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+80-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nurde\.gradle\caches\8.9\transforms\1cfb3b405d44a3ff48410d01e9276996\transformed\profileinstaller-1.3.1\AndroidManifest.xml:35:13-76
+81            android:directBootAware="false"
+81-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nurde\.gradle\caches\8.9\transforms\1cfb3b405d44a3ff48410d01e9276996\transformed\profileinstaller-1.3.1\AndroidManifest.xml:36:13-44
+82            android:enabled="true"
+82-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nurde\.gradle\caches\8.9\transforms\1cfb3b405d44a3ff48410d01e9276996\transformed\profileinstaller-1.3.1\AndroidManifest.xml:37:13-35
+83            android:exported="true"
+83-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nurde\.gradle\caches\8.9\transforms\1cfb3b405d44a3ff48410d01e9276996\transformed\profileinstaller-1.3.1\AndroidManifest.xml:38:13-36
+84            android:permission="android.permission.DUMP" >
+84-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nurde\.gradle\caches\8.9\transforms\1cfb3b405d44a3ff48410d01e9276996\transformed\profileinstaller-1.3.1\AndroidManifest.xml:39:13-57
+85            <intent-filter>
+85-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nurde\.gradle\caches\8.9\transforms\1cfb3b405d44a3ff48410d01e9276996\transformed\profileinstaller-1.3.1\AndroidManifest.xml:40:13-42:29
+86                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+86-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nurde\.gradle\caches\8.9\transforms\1cfb3b405d44a3ff48410d01e9276996\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:17-91
+86-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nurde\.gradle\caches\8.9\transforms\1cfb3b405d44a3ff48410d01e9276996\transformed\profileinstaller-1.3.1\AndroidManifest.xml:41:25-88
+87            </intent-filter>
+88            <intent-filter>
+88-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nurde\.gradle\caches\8.9\transforms\1cfb3b405d44a3ff48410d01e9276996\transformed\profileinstaller-1.3.1\AndroidManifest.xml:43:13-45:29
+89                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+89-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nurde\.gradle\caches\8.9\transforms\1cfb3b405d44a3ff48410d01e9276996\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:17-85
+89-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nurde\.gradle\caches\8.9\transforms\1cfb3b405d44a3ff48410d01e9276996\transformed\profileinstaller-1.3.1\AndroidManifest.xml:44:25-82
+90            </intent-filter>
+91            <intent-filter>
+91-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nurde\.gradle\caches\8.9\transforms\1cfb3b405d44a3ff48410d01e9276996\transformed\profileinstaller-1.3.1\AndroidManifest.xml:46:13-48:29
+92                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+92-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nurde\.gradle\caches\8.9\transforms\1cfb3b405d44a3ff48410d01e9276996\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:17-88
+92-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nurde\.gradle\caches\8.9\transforms\1cfb3b405d44a3ff48410d01e9276996\transformed\profileinstaller-1.3.1\AndroidManifest.xml:47:25-85
+93            </intent-filter>
+94            <intent-filter>
+94-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nurde\.gradle\caches\8.9\transforms\1cfb3b405d44a3ff48410d01e9276996\transformed\profileinstaller-1.3.1\AndroidManifest.xml:49:13-51:29
+95                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+95-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nurde\.gradle\caches\8.9\transforms\1cfb3b405d44a3ff48410d01e9276996\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:17-95
+95-->[androidx.profileinstaller:profileinstaller:1.3.1] C:\Users\nurde\.gradle\caches\8.9\transforms\1cfb3b405d44a3ff48410d01e9276996\transformed\profileinstaller-1.3.1\AndroidManifest.xml:50:25-92
+96            </intent-filter>
+97        </receiver>
+98    </application>
+99
+100</manifest>
